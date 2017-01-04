@@ -18,7 +18,6 @@ $(document).ready(function() {
 <o:topbar />
 <div class="container-fluid main">
 
-	<h1><spring:message code="login.login_with_username_and_password"/></h1>
 
 	<c:if test="${ param.error != null }">
 		<div class="alert alert-error"><spring:message code="login.error"/></div>
@@ -26,7 +25,8 @@ $(document).ready(function() {
 
 
 	<div class="row-fluid">
-		<div class="span6 offset1 well">
+		<div class="offset4 span4 well clearfix text-center" style="padding: 50px;">
+			<img src="resources/images/openid_connect_large.png" style="display: inline-block; padding: 20px 0px 70px 0px;"/>
 			<form action="${ config.issuer }${ config.issuer.endsWith('/') ? '' : '/' }j_spring_security_check" method="POST">
 				<div>
 					<div class="input-prepend input-block-level">
@@ -42,7 +42,7 @@ $(document).ready(function() {
 				</div>
 				<div>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-					<input type="submit" class="btn" value="<spring:message code="login.login-button"/>" name="submit">
+					<input type="submit" class="btn btn-primary span4" style="margin-top: 50px" value="<spring:message code="login.login-button"/>" name="submit">
 				</div>
 			</form>
 		</div>

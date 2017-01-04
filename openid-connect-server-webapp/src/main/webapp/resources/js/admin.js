@@ -436,6 +436,8 @@ var AppRouter = Backbone.Router.extend({
         "dev/dynreg":"dynReg",
         "dev/dynreg/new":"newDynReg",
         "dev/dynreg/edit":"editDynReg",
+
+		"dev/logo": "logo",
         
         "dev/resource":"resReg",
         "dev/resource/new":"newResReg",
@@ -965,7 +967,16 @@ var AppRouter = Backbone.Router.extend({
     	setPageTitle($.t('dynreg.edit-existing'));
     	// note that this doesn't actually load the client, that's supposed to happen elsewhere...
     },
-    
+
+	logo: function () {
+		this.breadCrumbView.collection.reset();
+		this.breadCrumbView.collection.add([
+			{text:$.t('admin.home'), href:""},
+			{text:$.t('admin.logo'), href:""}
+		]);
+		$("#content").html($("#tmpl-logo").html());
+	},
+
     resReg:function() {
     	this.breadCrumbView.collection.reset();
     	this.breadCrumbView.collection.add([
@@ -1077,7 +1088,8 @@ $(function () {
     		$.get('resources/template/dynreg.html', _load),
     		$.get('resources/template/rsreg.html', _load),
     		$.get('resources/template/token.html', _load),
-    		$.get('resources/template/blacklist.html', _load)
+    		$.get('resources/template/blacklist.html', _load),
+			$.get('resources/template/logo.html',_load)
     		).done(function() {
     		    $.ajaxSetup({cache:false});
     		    app = new AppRouter();

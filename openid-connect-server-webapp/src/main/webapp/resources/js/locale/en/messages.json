@@ -12,6 +12,7 @@
         "manage-blacklist": "Manage Blacklisted Clients",
         "self-service-client": "Self-service Client Registration",
         "self-service-resource": "Self-service Protected Resource Registration",
+        "logo": "Change Logo",
         "user-profile": {
             "claim": "Claim name:",
             "show": "View User Profile",
@@ -427,6 +428,7 @@
 		},
 		"developer": {
 			"title": "Developer",
+            "change_logo": "Change application logo",
 			"client_registration": "Self-service client registration",
 			"resource_registration": "Self-service protected resource registration"
 		}
